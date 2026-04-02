@@ -348,10 +348,290 @@
             transform: scale(1.05);
         }
 
+        /* ===== IITM IV SECTION ===== */
+        .iv-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 25px;
+        }
+
+        .iv-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0 22px;
+        }
+
+        .iv-badge {
+            background: rgba(16, 185, 129, 0.12);
+            color: #a7f3d0;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .iv-points {
+            display: grid;
+            gap: 12px;
+            color: var(--text-muted);
+            margin-top: 14px;
+        }
+
+        .iv-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .iv-point i {
+            color: var(--accent);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .iv-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .iv-tab {
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .iv-tab:hover,
+        .iv-tab.active {
+            color: var(--text-main);
+            border-color: rgba(16, 185, 129, 0.45);
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .iv-panels {
+            position: relative;
+            min-height: 220px;
+        }
+
+        .iv-panel {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .iv-panel.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .iv-panel h3 {
+            margin-bottom: 12px;
+        }
+
+        .iv-panel ul {
+            color: var(--text-muted);
+            padding-left: 18px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .iv-gallery {
+            margin-top: 25px;
+            padding: 20px;
+        }
+
+        .iv-gallery-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .iv-gallery-head p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .iv-doc-view {
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            min-height: 460px;
+        }
+
+        .iv-doc-view iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            min-height: 460px;
+        }
+
+        .iv-doc-link {
+            margin-top: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(16, 185, 129, 0.45);
+            text-decoration: none;
+            color: #a7f3d0;
+            background: rgba(16, 185, 129, 0.12);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .iv-doc-link:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.75);
+        }
+
+        /* ===== HYDRAULIC COUNTERBALANCE SHOWCASE ===== */
+        .hc-showcase {
+            margin-top: 18px;
+            padding: 0;
+        }
+
+        .hc-stage {
+            position: relative;
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 16 / 7;
+            background: #071620;
+            margin-bottom: 12px;
+        }
+
+        .hc-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .hc-slide.active {
+            opacity: 1;
+        }
+
+        .hc-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hc-caption {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #d9f99d;
+            background: rgba(3, 7, 18, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .hc-thumbs {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .hc-thumb {
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.25s ease;
+            aspect-ratio: 16 / 8;
+        }
+
+        .hc-thumb.active,
+        .hc-thumb:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            border-color: rgba(16, 185, 129, 0.55);
+        }
+
+        .hc-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .hc-tag {
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .hc-tag.active,
+        .hc-tag:hover {
+            color: #d1fae5;
+            border-color: rgba(16, 185, 129, 0.58);
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .hc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #a7f3d0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(167, 243, 208, 0.45);
+            font-weight: 600;
+        }
+
         /* ===== MOBILE RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .sidebar { width: 250px; padding: 40px 20px; }
             .content { margin-left: 250px; padding: 60px 5vw; }
+            .iv-layout { grid-template-columns: 1fr; }
+            .iv-panels { min-height: 250px; }
+            .iv-doc-view,
+            .iv-doc-view iframe {
+                min-height: 400px;
+            }
+            .hc-thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
@@ -369,6 +649,12 @@
             .content { margin-left: 0; padding: 40px 20px; }
             .nav-links { flex-direction: row; flex-wrap: wrap; margin-bottom: 30px; }
             .nav-links a { width: calc(50% - 5px); justify-content: center; }
+            .iv-doc-view,
+            .iv-doc-view iframe {
+                min-height: 320px;
+            }
+            .hc-stage { aspect-ratio: 16 / 10; }
+            .hc-thumbs { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -392,6 +678,7 @@
             <a href="#about"><i data-lucide="user"></i> Profile</a>
             <a href="#skills"><i data-lucide="cpu"></i> Skills</a>
             <a href="#projects"><i data-lucide="layers"></i> Projects</a>
+            <a href="#iv-iitm"><i data-lucide="factory"></i> IV at IITM</a>
             <a href="#education"><i data-lucide="graduation-cap"></i> Education</a>
             <a href="#contact"><i data-lucide="mail"></i> Contact</a>
         </div>
@@ -434,13 +721,154 @@
             <h2>Featured Projects</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Aluminum Filler Rod Holder <i data-lucide="wrench"></i></h3>
-                    <p>Optimized welding ergonomics by designing a custom holder. Developed complete 2D/3D technical documentation using AutoCAD and CREO for precision manufacturing.</p>
+                    <h3>STINGER PELEROSIS <i data-lucide="wrench"></i></h3>
+                    <p>
+                        Developed a TIG welding filler rod holder with an integrated kinematic mechanism for smoother,
+                        controlled rod feeding. It improves weld consistency, reduces operator fatigue, and supports
+                        efficient precision fabrication.
+                    </p>
+                    <p style="margin-top: 14px;">
+                        <a href="assets/shyam (2)-2.pdf" target="_blank" style="color: #a7f3d0; text-decoration: none; border-bottom: 1px solid rgba(167, 243, 208, 0.5);">
+                            View Project Document
+                        </a>
+                    </p>
                 </div>
                 <div class="card">
                     <h3>Hydraulic Counterbalance <i data-lucide="shield-check"></i></h3>
                     <p>Deep-dive analysis into load-holding safety mechanisms. Evaluated motion control variables to enhance safety in industrial lifting applications.</p>
+                    <div class="hc-showcase">
+                        <div class="hc-stage">
+                            <div class="hc-slide active" data-index="0">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.20.38 PM.jpeg" alt="Hydraulic circuits diagram">
+                            </div>
+                            <div class="hc-slide" data-index="1">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.20.39 PM.jpeg" alt="Counterbalance valve setup">
+                            </div>
+                            <div class="hc-slide" data-index="2">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.21.18 PM.jpeg" alt="Negative load case">
+                            </div>
+                            <div class="hc-slide" data-index="3">
+                                <img src="assets/pic.jpeg" alt="Hydraulic component close-up 1">
+                            </div>
+                            <div class="hc-slide" data-index="4">
+                                <img src="assets/pic1.jpeg" alt="Hydraulic component close-up 2">
+                            </div>
+                            <div class="hc-caption" id="hcCaption">Hydraulic Circuits</div>
+                        </div>
+
+                        <div class="hc-thumbs">
+                            <button class="hc-thumb active" data-index="0" aria-label="Hydraulic circuits image">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.20.38 PM.jpeg" alt="Hydraulic circuits thumbnail">
+                            </button>
+                            <button class="hc-thumb" data-index="1" aria-label="Counterbalance valve image">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.20.39 PM.jpeg" alt="Counterbalance valve thumbnail">
+                            </button>
+                            <button class="hc-thumb" data-index="2" aria-label="Negative load image">
+                                <img src="assets/WhatsApp Image 2026-04-01 at 9.21.18 PM.jpeg" alt="Negative load thumbnail">
+                            </button>
+                            <button class="hc-thumb" data-index="3" aria-label="Hydraulic close-up image 1">
+                                <img src="assets/pic.jpeg" alt="Hydraulic close-up thumbnail 1">
+                            </button>
+                            <button class="hc-thumb" data-index="4" aria-label="Hydraulic close-up image 2">
+                                <img src="assets/pic1.jpeg" alt="Hydraulic close-up thumbnail 2">
+                            </button>
+                        </div>
+
+                        <div class="hc-tags">
+                            <button class="hc-tag active" data-index="0">Hydraulic Circuits</button>
+                            <button class="hc-tag" data-index="1">Counterbalance Valve</button>
+                            <button class="hc-tag" data-index="2">Negative Load</button>
+                            <button class="hc-tag" data-index="3">Component View 1</button>
+                            <button class="hc-tag" data-index="4">Component View 2</button>
+                        </div>
+
+                        <a class="hc-link" id="hcImageLink" href="assets/WhatsApp Image 2026-04-01 at 9.20.38 PM.jpeg" target="_blank">
+                            <i data-lucide="link"></i> Open selected WhatsApp image
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="iv-iitm" class="reveal">
+            <h2>Industrial Visit at IITM Chennai</h2>
+            <div class="iv-layout">
+                <div class="card">
+                    <h3>IIT Madras Immersion <i data-lucide="building-2"></i></h3>
+                    <p>
+                        Participated in an industrial visit at <strong>IIT Madras, Chennai</strong> to observe
+                        live engineering workflows, research lab ecosystems, and innovation pipelines.
+                    </p>
+                    <div class="iv-meta">
+                        <span class="iv-badge">Research Labs</span>
+                        <span class="iv-badge">Automation Exposure</span>
+                        <span class="iv-badge">Industry Insights</span>
+                    </div>
+                    <div class="iv-points">
+                        <div class="iv-point">
+                            <i data-lucide="scan-search"></i>
+                            <p>Explored advanced manufacturing and mechatronics setups with real-world use cases.</p>
+                        </div>
+                        <div class="iv-point">
+                            <i data-lucide="users"></i>
+                            <p>Interacted with researchers and learned how design thinking drives product development.</p>
+                        </div>
+                        <div class="iv-point">
+                            <i data-lucide="trending-up"></i>
+                            <p>Connected classroom fundamentals to practical, high-impact mechanical systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="iv-tabs" role="tablist" aria-label="IITM visit highlights">
+                        <button class="iv-tab active" data-tab="day1" role="tab" aria-selected="true">Campus & Labs</button>
+                        <button class="iv-tab" data-tab="day2" role="tab" aria-selected="false">Core Learning</button>
+                        <button class="iv-tab" data-tab="day3" role="tab" aria-selected="false">Key Takeaways</button>
+                    </div>
+
+                    <div class="iv-panels">
+                        <div class="iv-panel active" id="day1" role="tabpanel">
+                            <h3>Campus & Lab Experience <i data-lucide="map-pinned"></i></h3>
+                            <ul>
+                                <li>Visited high-performance research spaces focused on mechanical innovation.</li>
+                                <li>Observed how academic prototypes are translated into field-ready solutions.</li>
+                                <li>Experienced collaborative engineering culture across interdisciplinary teams.</li>
+                            </ul>
+                        </div>
+                        <div class="iv-panel" id="day2" role="tabpanel">
+                            <h3>Technical Learning <i data-lucide="cpu"></i></h3>
+                            <ul>
+                                <li>Understood integration of automation concepts with conventional machinery.</li>
+                                <li>Learned practical constraints in design, maintenance, and safety systems.</li>
+                                <li>Strengthened perspective on industrial problem-solving methods.</li>
+                            </ul>
+                        </div>
+                        <div class="iv-panel" id="day3" role="tabpanel">
+                            <h3>Professional Impact <i data-lucide="sparkles"></i></h3>
+                            <ul>
+                                <li>Built confidence in applying mechanical concepts to modern engineering contexts.</li>
+                                <li>Gained clarity on future upskilling in advanced manufacturing and controls.</li>
+                                <li>Inspired to pursue innovation-driven projects with measurable impact.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card iv-gallery">
+                <div class="iv-gallery-head">
+                    <h3>IITM IV Document <i data-lucide="file-text"></i></h3>
+                    <p>Single file view from your provided path.</p>
+                </div>
+
+                <div class="iv-doc-view">
+                    <iframe src="assets/IV photos.pdf#view=FitH" title="IITM IV PDF"></iframe>
+                </div>
+
+                <a class="iv-doc-link" href="assets/IV photos.pdf" target="_blank">
+                    <i data-lucide="external-link"></i> Open IV photos.pdf in new tab
+                </a>
             </div>
         </section>
 
@@ -456,6 +884,31 @@
                     <h3>AAI Internship <i data-lucide="plane"></i></h3>
                     <p style="margin-bottom: 10px;"><strong>Motorsports Department, Chennai Airport</strong></p>
                     <p>Focused on maintenance of fire engines and specialized ground support equipment.</p>
+                    <p style="margin-top: 14px;">
+                        <a href="assets/intern AAI CERTIFICATE.pdf" target="_blank" style="color: #a7f3d0; text-decoration: none; border-bottom: 1px solid rgba(167, 243, 208, 0.5);">
+                            View Internship Certificate
+                        </a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Workshop Certificates <i data-lucide="badge-check"></i></h3>
+                    <p style="margin-bottom: 10px;"><strong>Technical Workshops & Training</strong></p>
+                    <p>Collection of workshop participation and completion certificates.</p>
+                    <p style="margin-top: 14px;">
+                        <a href="assets/workshop certificates.pdf" target="_blank" style="color: #a7f3d0; text-decoration: none; border-bottom: 1px solid rgba(167, 243, 208, 0.5);">
+                            View Workshop Certificates
+                        </a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>NPTEL Certification <i data-lucide="award"></i></h3>
+                    <p style="margin-bottom: 10px;"><strong>NPTEL Course Completion</strong></p>
+                    <p>Verified NPTEL certification record.</p>
+                    <p style="margin-top: 14px;">
+                        <a href="assets/nptel.jpeg" target="_blank" style="color: #a7f3d0; text-decoration: none; border-bottom: 1px solid rgba(167, 243, 208, 0.5);">
+                            View NPTEL Certification
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -476,8 +929,8 @@
                 </a>
                 <a href="https://www.linkedin.com/in/shyam-senthilkumar-3372b8356/" target="_blank" style="text-decoration: none;">
                     <div class="card" style="display: flex; align-items: center; gap: 20px;">
-                        <div style="background: var(--accent-glow); padding: 15px; border-radius: 50%;">
-                            <i data-lucide="linkedin" style="color: var(--accent);"></i>
+                        <div style="background: var(--accent-glow); width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center;">
+                            <span style="color: var(--accent); font-size: 1.45rem; font-weight: 800; line-height: 1; font-family: 'Inter', sans-serif;">in</span>
                         </div>
                         <div>
                             <h3 style="margin: 0; font-size: 1.1rem;">LinkedIn</h3>
@@ -541,16 +994,85 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         // 5. Interactive Card Glow Effect (Tracking mouse position)
-        document.getElementById('projects').onmousemove = e => {
-            for(const card of document.querySelectorAll('.card')) {
-                const rect = card.getBoundingClientRect(),
-                      x = e.clientX - rect.left,
-                      y = e.clientY - rect.top;
+        document.addEventListener('mousemove', (e) => {
+            for (const card of document.querySelectorAll('.card')) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             }
+        });
+
+        // 6. IITM IV tabs interaction
+        const ivTabs = document.querySelectorAll('.iv-tab');
+        const ivPanels = document.querySelectorAll('.iv-panel');
+
+        ivTabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.tab;
+
+                ivTabs.forEach((item) => {
+                    item.classList.remove('active');
+                    item.setAttribute('aria-selected', 'false');
+                });
+
+                ivPanels.forEach((panel) => panel.classList.remove('active'));
+
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+
+                const activePanel = document.getElementById(target);
+                if (activePanel) {
+                    activePanel.classList.add('active');
+                }
+            });
+        });
+
+        // 7. Hydraulic Counterbalance image section
+        const hcSlides = document.querySelectorAll('.hc-slide');
+        const hcThumbs = document.querySelectorAll('.hc-thumb');
+        const hcTags = document.querySelectorAll('.hc-tag');
+        const hcCaption = document.getElementById('hcCaption');
+        const hcImageLink = document.getElementById('hcImageLink');
+        const hcLabels = [
+            'Hydraulic Circuits',
+            'Counterbalance Valve',
+            'Negative Load',
+            'Component View 1',
+            'Component View 2'
+        ];
+
+        function setHydraulicSlide(index) {
+            hcSlides.forEach((slide) => slide.classList.remove('active'));
+            hcThumbs.forEach((thumb) => thumb.classList.remove('active'));
+            hcTags.forEach((tag) => tag.classList.remove('active'));
+
+            hcSlides[index].classList.add('active');
+            hcThumbs[index].classList.add('active');
+            hcTags[index].classList.add('active');
+
+            hcCaption.textContent = hcLabels[index];
+
+            const selectedImage = hcSlides[index].querySelector('img');
+            if (selectedImage && hcImageLink) {
+                hcImageLink.href = selectedImage.src;
+            }
         }
+
+        hcThumbs.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                setHydraulicSlide(Number(thumb.dataset.index));
+            });
+        });
+
+        hcTags.forEach((tag) => {
+            tag.addEventListener('click', () => {
+                setHydraulicSlide(Number(tag.dataset.index));
+            });
+        });
+
     </script>
 </body>
 </html>
